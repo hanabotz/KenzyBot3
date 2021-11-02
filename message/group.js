@@ -5,10 +5,10 @@ const fs = require("fs-extra")
 
 const { getBuffer } = require('../lib/myfunc')
 const { color, bgcolor } = require('../lib/color')
-join = '\`\`\`New Member\`\`\` \n \`\`\`Nama :\`\`\` \n \`\`\`Askot : \`\`\` \n \`\`\`Umur :\`\`\` \n \`\`\`Status :\`\`\` \n\n - [   ] -'
+joinn = '\`\`\`New Member\`\`\` \n \`\`\`Nama :\`\`\` \n \`\`\`Askot : \`\`\` \n \`\`\`Umur :\`\`\` \n \`\`\`Status :\`\`\` \n\n - [   ] -'
 leave = '\`\`\`Sayonaraa\`\`\`'
 
-teks = `${join}`
+jowin = `${joinn}`
 let setting = JSON.parse(fs.readFileSync('./setting.json'))
 
 module.exports = welcome = async (ikyy, anu) => {
@@ -39,10 +39,10 @@ module.exports = welcome = async (ikyy, anu) => {
             	num = anu.participants[0]
                 let v = ikyy.contacts[num] || { notify: num.replace(/@.+/, '') }
                 anu_user = v.vname || v.notify || num.split('@')[0]
-            buff = await getBuffer(`https://api.lolhuman.xyz/api/base/welcome?apikey=${setting.lolkey}&img1=${pp_user}&img2=${pp_grup}&background=https://telegra.ph/file/559d40a73f54e257b0b2e.jpg&username=${encodeURI(anu_user)}&member=${memeg}&groupname= ${encodeURI(mdata.subject)}`)
+            buff = await getBuffer(`https://api.lolhuman.xyz/api/base/welcome?apikey=${setting.lolkey}&img1=${pp_user}&img2=${pp_grup}&background=https://b.top4top.io/p_2119fhz259.jpg&username=${encodeURI(anu_user)}&member=${memeg}&groupname= ${encodeURI(mdata.subject)}`)
         buttons = [
 
-          { buttonId: `!selamatdatang`, buttonText: { displayText: "Welcome👋" }, type: 1 },
+          { buttonId: `!selamatdatang`, buttonText: { displayText: "Welcome" }, type: 1 },
 
         ];
 
@@ -58,9 +58,9 @@ module.exports = welcome = async (ikyy, anu) => {
 
         buttonsMessage = {
 
-          contentText: `${teks}`,
+          contentText: `halo @${num.split('@')[0]}\nselamat datang di group ${mdata.subject}``,
 
-          footerText: "KenzyBotz~",
+          footerText: "_Jangan Lupa Subs Yt RIFQI BOTZ_",
 
           imageMessage: imageMsg,
 
@@ -96,13 +96,13 @@ module.exports = welcome = async (ikyy, anu) => {
 
         memeg = mdata.participants.length;
 
-        out = `${leave}`;
+        out = `goodbye @${num.split('@')[0]}`
 
-        buff = await getBuffer(`https://api.lolhuman.xyz/api/base/welcome?apikey=${setting.lolkey}&img1=${pp_user}&img2=${pp_grup}&background=https://telegra.ph/file/559d40a73f54e257b0b2e.jpg&username=${encodeURI(anu_user)}&member=${memeg}&groupname= ${encodeURI(mdata.subject)}`)
+        buff = await getBuffer(`https://api.lolhuman.xyz/api/base/leave?apikey=${setting.lolkey}&img1=${pp_user}&img2=${pp_grup}&background=https://b.top4top.io/p_2119fhz259.jpg&username=${encodeURI(anu_user)}&member=${memeg}&groupname= ${encodeURI(mdata.subject)}`)
             
         buttons = [
 
-          { buttonId: `!bay`, buttonText: { displayText: "Sayonara👋" }, type: 1 },];
+          { buttonId: `!bay`, buttonText: { displayText: "Goodbye" }, type: 1 },];
 
         imageMsg = (
 
@@ -118,7 +118,7 @@ module.exports = welcome = async (ikyy, anu) => {
 
           contentText: `${out}`,
 
-          footerText: "KenzyBotz~",
+          footerText: "_Jangan Lupa Subs Yt RIFQI BOTZ_",
 
           imageMessage: imageMsg,
 
