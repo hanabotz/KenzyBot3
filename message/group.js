@@ -96,7 +96,7 @@ module.exports = welcome = async (ikyy, anu) => {
 
         memeg = mdata.participants.length;
 
-        out = `goodbye @${num.split('@')[0]}`
+        out = `goodbye👋@${num.split('@')[0]}`
 
         buff = await getBuffer(`https://api.lolhuman.xyz/api/base/leave?apikey=${setting.lolkey}&img1=${pp_user}&img2=${pp_grup}&background=https://b.top4top.io/p_2119fhz259.jpg&username=${encodeURI(anu_user)}&member=${memeg}&groupname= ${encodeURI(mdata.subject)}`)
             
